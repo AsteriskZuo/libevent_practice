@@ -32,6 +32,7 @@
 		EE4CD23D248F7E8A00C09C19 /* http.c in Sources */ = {isa = PBXBuildFile; fileRef = EE4CD239248F7E8A00C09C19 /* http.c */; };
 		EE4CD23E248F7E8A00C09C19 /* evrpc.c in Sources */ = {isa = PBXBuildFile; fileRef = EE4CD23A248F7E8A00C09C19 /* evrpc.c */; };
 		EE4CD27E248F88FF00C09C19 /* preface-libevent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE4CD27C248F88FF00C09C19 /* preface-libevent.cpp */; };
+		EE4CD281248F9C9D00C09C19 /* preface-libevent2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE4CD27F248F9C9D00C09C19 /* preface-libevent2.cpp */; };
 		EE828A0B248F410D0057EC16 /* preface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE828A09248F410D0057EC16 /* preface.cpp */; };
 		EE9A6431248E4879006F416D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9A6430248E4879006F416D /* main.cpp */; };
 /* End PBXBuildFile section */
@@ -130,6 +131,8 @@
 		EE4CD27B248F889500C09C19 /* ht-internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ht-internal.h"; sourceTree = "<group>"; };
 		EE4CD27C248F88FF00C09C19 /* preface-libevent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "preface-libevent.cpp"; sourceTree = "<group>"; };
 		EE4CD27D248F88FF00C09C19 /* preface-libevent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "preface-libevent.hpp"; sourceTree = "<group>"; };
+		EE4CD27F248F9C9D00C09C19 /* preface-libevent2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "preface-libevent2.cpp"; sourceTree = "<group>"; };
+		EE4CD280248F9C9D00C09C19 /* preface-libevent2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "preface-libevent2.hpp"; sourceTree = "<group>"; };
 		EE828A09248F410D0057EC16 /* preface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = preface.cpp; sourceTree = "<group>"; };
 		EE828A0A248F410D0057EC16 /* preface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = preface.hpp; sourceTree = "<group>"; };
 		EE9A642D248E4879006F416D /* test_libevent */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test_libevent; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,6 +309,8 @@
 				EE828A0A248F410D0057EC16 /* preface.hpp */,
 				EE4CD27C248F88FF00C09C19 /* preface-libevent.cpp */,
 				EE4CD27D248F88FF00C09C19 /* preface-libevent.hpp */,
+				EE4CD27F248F9C9D00C09C19 /* preface-libevent2.cpp */,
+				EE4CD280248F9C9D00C09C19 /* preface-libevent2.hpp */,
 			);
 			path = test_libevent;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				EE4CD236248F7E6E00C09C19 /* evthread.c in Sources */,
 				EE4CD223248F7E6E00C09C19 /* bufferevent_ratelim.c in Sources */,
 				EE4CD230248F7E6E00C09C19 /* select.c in Sources */,
+				EE4CD281248F9C9D00C09C19 /* preface-libevent2.cpp in Sources */,
 				EE4CD23D248F7E8A00C09C19 /* http.c in Sources */,
 				EE4CD27E248F88FF00C09C19 /* preface-libevent.cpp in Sources */,
 				EE4CD22A248F7E6E00C09C19 /* evutil_time.c in Sources */,
