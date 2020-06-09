@@ -103,7 +103,7 @@ int test_example_01(int c, char **v) {
 
 #define MAX_LINE 16384
 
-char
+static char
 rot13_char(char c) {
     /* We don't want to use isalpha here; setting the locale would change
      * which characters are considered alphabetical. */
@@ -115,7 +115,7 @@ rot13_char(char c) {
         return c;
 }
 
-void
+static void
 child(int fd) {
     char outbuf[MAX_LINE + 1];
     size_t outbuf_used = 0;
@@ -144,7 +144,7 @@ child(int fd) {
     }
 }
 
-void
+static void
 run(void) {
     int listener;
     struct sockaddr_in sin;
@@ -212,15 +212,15 @@ struct fd_state *alloc_fd_state(void) {
     return state;
 }
 
-void free_fd_state(struct fd_state *state) {
+static void free_fd_state(struct fd_state *state) {
     free(state);
 }
 
-void make_nonblocking(int fd) {
+static void make_nonblocking(int fd) {
     fcntl(fd, F_SETFL, O_NONBLOCK);
 }
 
-int do_read(int fd, struct fd_state *state) {
+static int do_read(int fd, struct fd_state *state) {
     char buf[1024];
     int i;
     ssize_t result;
@@ -250,7 +250,7 @@ int do_read(int fd, struct fd_state *state) {
     return 0;
 }
 
-int do_write(int fd, struct fd_state *state) {
+static int do_write(int fd, struct fd_state *state) {
     while (state->n_written < state->write_upto) {
         ssize_t result = send(fd, state->buffer + state->n_written,
                 state->write_upto - state->n_written, 0);
