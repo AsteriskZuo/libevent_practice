@@ -14,17 +14,17 @@
 #include <iostream>
 
 
-static bool echo_client();
+static bool echo_client_main();
 void test_echo_client()
 {
-    echo_client();
+    echo_client_main();
 }
 
 static void bufferevent_read_cb_func(struct bufferevent *bev, void *ctx);
 static void bufferevent_write_cb_func(struct bufferevent *bev, void *ctx);
 static void bufferevent_event_cb_func(struct bufferevent *bev, short what, void *ctx);
 
-static bool echo_client()
+static bool echo_client_main()
 {
     bool ret = false;
     do {
@@ -65,7 +65,7 @@ static bool echo_client()
         
         event_base_free(evbase);
         
-        std::cout << __func__ << ":" << __LINE__ << std::endl;
+        std::cout << "echo_client_" << __func__ << ":" << __LINE__ << std::endl;
         
         ret = true;
     } while (false);
@@ -75,28 +75,28 @@ static bool echo_client()
 
 static void bufferevent_read_cb_func(struct bufferevent *bev, void *ctx)
 {
-    std::cout << __func__ << ":" << __LINE__ << std::endl;
+    std::cout << "echo_client_" << __func__ << ":" << __LINE__ << std::endl;
     static const size_t buffer_size = 1024;
     static char* buffer[buffer_size + 1] = {0};
     memset(buffer, 0, buffer_size);
     size_t data_size = 0;
     while (static_cast<void>(data_size = bufferevent_read(bev, buffer, buffer_size)), 0 < data_size) {
-        std::cout << __func__ << ":" << __LINE__ << ":data=" << (char*)buffer << std::endl;
+        std::cout << "echo_client_" << __func__ << ":" << __LINE__ << ":data=" << (char*)buffer << std::endl;
     }
     event_base_loopexit((event_base*)ctx, NULL);
 }
 static void bufferevent_write_cb_func(struct bufferevent *bev, void *ctx)
 {
-    std::cout << __func__ << ":" << __LINE__ << std::endl;
+    std::cout << "echo_client_" << __func__ << ":" << __LINE__ << std::endl;
 }
 static void bufferevent_event_cb_func(struct bufferevent *bev, short what, void *ctx)
 {
-    std::cout << __func__ << ":" << __LINE__ << ":flag=" << what << std::endl;
+    std::cout << "echo_client_" << __func__ << ":" << __LINE__ << ":flag=" << what << std::endl;
     if (BEV_EVENT_CONNECTED & what) {
         static const char* data = "connect success.";
         static const size_t data_size = strlen(data);
         if (-1 == bufferevent_write(bev, data, data_size)) {
-            std::cout << __func__ << ":" << __LINE__ << ":send_message_fail" << what << std::endl;
+            std::cout << "echo_client_" << __func__ << ":" << __LINE__ << ":send_message_fail" << std::endl;
         }
     }
 }
