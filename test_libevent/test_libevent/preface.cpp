@@ -30,7 +30,7 @@
 
 int test_example_01(int c, char **v) {
     const char query[] =
-            "GET / HTTP/1.0\r\n"
+            "GET / HTTP/1.1\r\n"
             "Host: www.baidu.com\r\n"
             "\r\n";
     const char hostname[] = "www.baidu.com";
